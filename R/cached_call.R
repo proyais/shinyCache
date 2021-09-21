@@ -46,7 +46,7 @@ cache_call <- function(fn, cache, cache_params = list(),
   if (is.null(custom_id)) {
     cache_id <- digest::digest(
       object = list(cache_params = cache_params, cache_depends = cache_depends),
-      algo = "xxhash32",
+      algo = "sha256",
       seed = 1
     )
   }
